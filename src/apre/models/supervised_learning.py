@@ -61,4 +61,4 @@ def train_all_supervised_models(X, y_encoded, accel, config):
         'Feature_Importances': xgb_model.feature_importances_
     }
     
-    return results
+    return results, xgb_model

@@ -15,6 +15,7 @@ def apply_all_reductions(X, y_encoded, config):
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
     results['X_scaled'] = X_scaled
+    results['scaler'] = scaler
     
     # PCA
     target = config.get('pca_target', 0.95)

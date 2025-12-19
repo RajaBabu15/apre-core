@@ -7,6 +7,8 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 from config.config import *
+import joblib
+import os
 from apre.utils.accelerators import configure_accelerators, set_random_seeds
 from apre.data.loader import download_esc50_data, load_metadata, select_classes, prepare_labels
 from apre.features.extractor import extract_features_from_metadata
@@ -35,6 +37,11 @@ def main():
     print("\n2. Extracting Advanced Audio Features...")
     X, labels, filepaths = extract_features_from_metadata(meta_sub, audio_dir)
     y_encoded, le, class_names = prepare_labels(labels)
+    
+    print("Saving preprocessing artifacts...")
+    if not os.path.exists("saved_models"):
+        os.makedirs("saved_models")
+    joblib.dump(le, "saved_models/label_encoder.joblib")
 
     print("Feature matrix shape:", X.shape)
     print("Classes:", class_names)
@@ -48,6 +55,7 @@ def main():
         'umap_min_dist': UMAP_MIN_DIST
     }
     reduction_results = apply_all_reductions(X, y_encoded, reduction_config)
+    joblib.dump(reduction_results['scaler'], "saved_models/scaler.joblib")
 
     print("\n4. Creating Autoencoder Representation...")
     X_encoded = create_autoencoder_pipeline(
@@ -92,9 +100,11 @@ def main():
         'mlp_max_iter': MLP_MAX_ITER,
         'xgb_n_estimators': XGB_PARAMS['n_estimators']
     }
-    supervised_results = train_all_supervised_models(
+    supervised_results, best_xgb_model = train_all_supervised_models(
         reduction_results['X_scaled'], y_encoded, accel, supervised_config
     )
+    best_xgb_model.save_model("saved_models/xgboost_model.json")
+    print("Models saved successfully!")
 
     print("\n8. Training CNN Model...")
     cnn_results = create_cnn_pipeline(

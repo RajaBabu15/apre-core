@@ -38,15 +38,20 @@ pip install -e .
 
 ## Usage
 
-### Basic Usage
+### Quick Start (Demo)
 
-Run the complete APRE pipeline:
+1. **Train & Save Models** (One-time setup):
+   ```bash
+   python main.py
+   # This creates the 'saved_models/' directory
+   ```
 
-```bash
-python main.py
-```
+2. **Run the UI App**:
+   ```bash
+   streamlit run app.py
+   ```
 
-### Ouput
+### Output
 
 ```text
 ===== RESULTS SUMMARY =====
