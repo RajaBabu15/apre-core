@@ -223,7 +223,7 @@ plots/
 figures/
 
 # Generated images and plots (uncomment if you want to track them)
-*.png
+# *.png
 # *.jpg
 # *.jpeg
 # *.gif
