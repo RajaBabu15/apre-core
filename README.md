@@ -16,6 +16,9 @@ A comprehensive audio analysis framework that combines advanced feature extracti
 
 ### Option 1: Virtual Environment Setup
 
+> **Note**: TensorFlow for macOS requires Python < 3.12. If you are on a newer Python version, consider using `conda` or installing a compatible Python version (e.g., 3.9-3.11).
+
+
 1. Create and activate a virtual environment:
 ```bash
 python -m venv apre_env

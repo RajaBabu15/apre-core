@@ -204,7 +204,7 @@ logs/
 
 # Data directories (large datasets should not be in git)
 esc50_data/
-data/
+
 datasets/
 
 # Model files (often large)
@@ -214,7 +214,7 @@ datasets/
 *.h5
 *.hdf5
 *.model
-models/
+
 
 # Output directories
 outputs/
@@ -223,7 +223,7 @@ plots/
 figures/
 
 # Generated images and plots (uncomment if you want to track them)
-# *.png
+*.png
 # *.jpg
 # *.jpeg
 # *.gif

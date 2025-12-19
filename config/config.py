@@ -25,7 +25,7 @@ OS_ENV_SETTINGS = {
     "NUMBA_NUM_THREADS": "1"
 }
 
-CANDIDATE_CLASSES = ["glass", "door", "plate", "clock", "keyboard", "mouse", "water", "fire"]
+CANDIDATE_CLASSES = ["glass_breaking", "door_wood_knock", "clock_alarm", "keyboard_typing", "mouse_click", "water_drops", "crackling_fire", "dog"]
 MIN_SELECTED_CLASSES = 5
 
 PCA_TARGET = 0.95

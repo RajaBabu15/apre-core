@@ -3,17 +3,17 @@ import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 from config.config import *
-from src.apre.utils.accelerators import configure_accelerators, set_random_seeds
-from src.apre.data.loader import download_esc50_data, load_metadata, select_classes, prepare_labels
-from src.apre.features.extractor import extract_features_from_metadata
-from src.apre.models.dimensionality_reduction import apply_all_reductions
-from src.apre.clustering.algorithms import apply_all_clustering_methods, map_clusters_to_labels
-from src.apre.models.neural_networks import (create_autoencoder_pipeline, build_dec_model,
+from apre.utils.accelerators import configure_accelerators, set_random_seeds
+from apre.data.loader import download_esc50_data, load_metadata, select_classes, prepare_labels
+from apre.features.extractor import extract_features_from_metadata
+from apre.models.dimensionality_reduction import apply_all_reductions
+from apre.clustering.algorithms import apply_all_clustering_methods, map_clusters_to_labels
+from apre.models.neural_networks import (create_autoencoder_pipeline, build_dec_model,
                                            train_dec_model, create_cnn_pipeline)
-from src.apre.models.supervised_learning import train_all_supervised_models
-from src.apre.evaluation.metrics import (evaluate_all_clustering_results, print_results_summary,
+from apre.models.supervised_learning import train_all_supervised_models
+from apre.evaluation.metrics import (evaluate_all_clustering_results, print_results_summary,
                                        create_results_summary)
-from src.apre.visualization.plots import save_all_plots
+from apre.visualization.plots import save_all_plots
 
 def main():
     print("Starting Audio Pattern Recognition Engine (APRE)")
