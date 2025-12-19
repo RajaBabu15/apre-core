@@ -7,7 +7,7 @@ AUDIO_DIR = os.path.join(REPO_ROOT, "audio")
 META_PATH = os.path.join(REPO_ROOT, "meta", "esc50.csv")
 
 SAMPLE_RATE = 22050
-N_MFCC = 20
+N_MFCC = 40
 TARGET_SECONDS = 5
 
 EXPECTED_FEATURE_SIZE = 282
@@ -15,8 +15,8 @@ EXPECTED_FEATURE_SIZE = 282
 RANDOM_SEED = 42
 TEST_SIZE = 0.2
 BATCH_SIZE = 32
-AUTOENCODER_EPOCHS = 50
-CNN_EPOCHS = 30
+AUTOENCODER_EPOCHS = 100
+CNN_EPOCHS = 100
 DEC_EPOCHS = 30
 ENCODING_DIM = 32
 
@@ -25,14 +25,20 @@ OS_ENV_SETTINGS = {
     "NUMBA_NUM_THREADS": "1"
 }
 
-CANDIDATE_CLASSES = ["glass_breaking", "door_wood_knock", "clock_alarm", "keyboard_typing", "mouse_click", "water_drops", "crackling_fire", "dog"]
+CANDIDATE_CLASSES = [
+    "chainsaw",
+    "church_bells",
+    "clock_alarm",
+    "dog",
+    "sea_waves"
+]
 MIN_SELECTED_CLASSES = 5
 
 PCA_TARGET = 0.95
 TSNE_PERPLEXITY = 30
 TSNE_LEARNING_RATE = 200
-UMAP_N_NEIGHBORS = 15
-UMAP_MIN_DIST = 0.1
+UMAP_N_NEIGHBORS = 6
+UMAP_MIN_DIST = 0.0
 
 KMEANS_N_INIT = 20
 DBSCAN_PARAMS = {
@@ -43,14 +49,14 @@ SPECTRAL_N_INIT = 10
 GMM_N_INIT = 5
 
 AUTOENCODER_LAYERS = [512, 256, 128]
-CNN_FILTERS = [64, 128, 256]
+CNN_FILTERS = [32, 64, 128]
 CNN_KERNEL_SIZE = 3
 DENSE_LAYERS = [256, 128, 64]
 MLP_LAYERS = (256, 128, 64)
 MLP_MAX_ITER = 500
 
 XGB_PARAMS = {
-    "n_estimators": 100,
+    "n_estimators": 500,
     "random_state": RANDOM_SEED,
     "use_label_encoder": False,
     "eval_metric": "mlogloss"

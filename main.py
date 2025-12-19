@@ -1,5 +1,9 @@
-import sys
 import os
+# MUST be set before importing numpy, sklearn, or umap
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["NUMBA_NUM_THREADS"] = "1"
+
+import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 from config.config import *

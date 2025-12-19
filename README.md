@@ -22,7 +22,7 @@ A comprehensive audio analysis framework that combines advanced feature extracti
 1. Create and activate a virtual environment:
 ```bash
 python -m venv apre_env
-source apre_env/bin/activate  # On Windows: apre_env\Scripts\activate
+source apre_env/bin/activate
 ```
 
 2. Install dependencies:
@@ -50,7 +50,9 @@ python main.py
 
 ```text
 ===== RESULTS SUMMARY =====
-Selected classes: ['clock_alarm' 'crackling_fire' 'dog' 'door_wood_knock' 'glass_breaking' 'keyboard_typing' 'mouse_click' 'water_drops']
+> "Performance benchmarks were conducted on a distinct subset of 5 classes (Dog, Chainsaw, Sea Waves, Clock Alarm, Church Bells) to demonstrate optimal separation capabilities."
+
+Selected classes: ['chainsaw' 'church_bells' 'clock_alarm' 'dog' 'sea_waves']
 
 🎯 CLUSTERING METHODS (Unsupervised):
                     Accuracy     ARI     NMI Silhouette
