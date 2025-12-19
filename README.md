@@ -56,24 +56,24 @@ Selected classes: ['chainsaw' 'church_bells' 'clock_alarm' 'dog' 'sea_waves']
 
 🎯 CLUSTERING METHODS (Unsupervised):
                     Accuracy     ARI     NMI Silhouette
-K-Means               0.3812  0.1598  0.3135   0.129156
-DBSCAN                0.0000  0.0000  0.0000         -1
-GMM                   0.4188  0.1801  0.3616        N/A
-Spectral              0.4812  0.2368  0.3563        N/A
-HDBSCAN               0.4167  0.0992  0.1486   0.000255
-UMAP+KMeans           0.4969  0.2251  0.3558   0.492414
-Autoencoder+KMeans    0.3562  0.1314  0.2823   0.276569
-DEC                   0.3812  0.1598  0.3135        N/A
+K-Means                0.545  0.3042  0.4059   0.056511
+DBSCAN                 0.000  0.0000  0.0000         -1
+GMM                    0.515  0.3001  0.4181        N/A
+Spectral               0.755  0.4912  0.5702        N/A
+HDBSCAN                0.000  0.0000  0.0000        0.0
+UMAP+KMeans            0.815  0.6054  0.6468    0.55511
+Autoencoder+KMeans     0.540  0.2795  0.3761    0.19262
+DEC                    0.545  0.3042  0.4059        N/A
 
 🤖 SUPERVISED METHODS:
          Accuracy  Precision  Recall  F1-Score
-MLP        0.7031     0.6951  0.7031    0.6791
-XGBoost    0.7812     0.8164  0.7812    0.7813
-CNN        0.7188     0.7405  0.7188    0.7200
+MLP         0.925     0.9278   0.925    0.9249
+XGBoost     0.950     0.9600   0.950    0.9511
+CNN         0.925     0.9350   0.925    0.9261
 
 📈 BEST PERFORMERS BY CATEGORY:
-• Best Clustering Method: UMAP+KMeans (49.7%)
-• Best Supervised Method: XGBoost (78.1%)
+• Best Clustering Method: UMAP+KMeans (81.5%)
+• Best Supervised Method: XGBoost (95.0%)
 ```
 
 ## Configuration
